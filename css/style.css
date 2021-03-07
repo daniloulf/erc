@@ -1,0 +1,73 @@
+body {
+	font-family: 'Newsreader', serif;
+	font-size: 1em;
+}
+
+h1, h2, h3, h4, h5, h6 {
+	font-family: 'Truculenta', sans-serif;
+}
+
+a {
+	text-decoration: none;
+	color: green;
+	letter-spacing: 0.25em;
+}
+
+a:hover {
+	text-decoration: none;
+	color: lime;
+}
+
+header h1 {
+	font-size: 5em;
+	text-align:center;
+}
+
+/* Form */
+input, label {
+	font-family: 'Truculenta', sans-serif;
+	font-size: 1em;
+}
+
+/* Table */
+table {
+	width:  100% !important;
+}
+
+tr {
+	border-bottom: 1px solid darkgrey !important;
+}
+
+tr:last-child {
+	border-bottom: 0 !important;
+}
+
+td {
+	border-right: 1px solid darkgrey !important;
+	text-align: center;
+}
+
+td:last-child {
+	border-right: 0 !important;
+}
+
+.result {
+	display:none;
+}
+
+/* helpers */
+.parties {
+	text-transform: uppercase !important;
+}
+
+.error_msg {
+	color: red !important;
+	text-align: center !important;
+}
+
+footer p {
+	font-family: 'Truculenta', sans-serif;
+	font-size: 0.7 em !important;
+	text-align: center;
+}
+
