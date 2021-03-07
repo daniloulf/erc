@@ -199,7 +199,7 @@
 				<div class="container">
 					<div class="row">
 						<div class="col-lg-12">
-							<p>&copy; Danilo Ulf Mattick &mdash; All rights reserved! &mdash; <a href="https://github.com/daniloulf/cge">fork it</a>
+							<p>&copy; Danilo Ulf Mattick &mdash; All rights reserved! &mdash; <a href="https://github.com/daniloulf/erc">fork it</a>
 						</div>
 					</div>
 				</div>
