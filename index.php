@@ -29,13 +29,6 @@
         <link href="css/fonts.css" rel="stylesheet" />
         <link href="css/style.css" rel="stylesheet" />
         
-        <!-- Javascript jQuery -->
-	    <script src="https://code.jquery.com/jquery-3.5.0.js"></script>
-	    <script src="./js/validation.min.js"></script>
-	    
-	    <!-- User JS -->
-	    <script src="js/myscript.js"></script>
-        
     </head>
     
     <body>
@@ -59,51 +52,42 @@
 				<div class="row">
 					<div class="col-lg-6">
 						<form id="erc">
-							<label>Wahlberechtigte Gesamtbürger</label>
-							<input title="Geben Sie eine Zahl von 1000 bis 999.999.999 ein." type="number" min="1000" max="999999999" id="citizens-total" required />
-							</br></br>
+							<label class="form-label">Wahlberechtigte Gesamtbürger</label>
+							<input class="form-control form-control-sm" value="1000" title="Geben Sie eine Zahl von 1000 bis 999.999.999 ein." type="number" min="1000" max="999999999" id="citizens-total" required />
 							
-							<label>Ungültige Stimmen in (%)</label>
-							<input title="Geben Sie eine Zahl von 0 bis 100 ein. Eine Null bedeutet, dass es keine ungültigen Stimen gibt." type="number" min="0" max="" id="invalid-votes" required />
+							<label class="form-label">Ungültige Stimmen in (%)</label>
+							<input class="form-control form-control-sm" value="1" title="Geben Sie eine Zahl von 1 bis 100 ein." type="number" min="1" max="" id="invalid-votes" required />
 							
-							</br></br>
-							<label>Wahlbeteildigung in (%)</label>
-							<input title="Geben Sie eine Zahl zwischen 1 und 100 ein." type="number" min="1" max="100" id="voting-citizens" required />
-							</br></br>	
+							<label class="form-label">Wahlbeteildigung in (%)</label>
+							<input class="form-control form-control-sm" value="50" title="Geben Sie eine Zahl zwischen 1 und 100 ein." type="number" min="1" max="100" id="voting-citizens" required />
 							
-							<label>Partei 1</label>
-							<input title="Geben Sie nur 3 bis 6 Buchstaben ein." class="parties" type="text" min="3" max="6" id="party1" required /> 
-							</br></br>	
+							<label class="form-label">Partei 1</label>
+							<input class="form-control form-control-sm" value="CDU" title="Geben Sie nur 3 bis 6 Buchstaben ein." class="parties" type="text" min="3" max="6" id="party1" required /> 
 							
-							<label>Partei 2</label>
-							<input title="Geben Sie nur 3 bis 6 Buchstaben ein." class="parties" type="text" min="3" max="6" id="party2" required /> 
-							</br></br>	
+							<label class="form-label">Partei 2</label>
+							<input class="form-control form-control-sm" value="SPD" title="Geben Sie nur 3 bis 6 Buchstaben ein." class="parties" type="text" min="3" max="6" id="party2" required /> 
 							
-							<label>Partei 3</label>
-							<input title="Geben Sie nur 3 bis 6 Buchstaben ein." class="parties" type="text" min="3" max="6" id="party3" required /> 
-							</br></br>	
+							<label class="form-label">Partei 3</label>
+							<input class="form-control form-control-sm" value="FDP" title="Geben Sie nur 3 bis 6 Buchstaben ein." class="parties" type="text" min="3" max="6" id="party3" required /> 
 							
-							<label>Partei 4</label>
-							<input title="Geben Sie nur 3 bis 6 Buchstaben ein." class="parties" type="text" min="3" max="6" id="party4" required /> 
-							</br></br>	
+							<label class="form-label">Partei 4</label>
+							<input class="form-control form-control-sm" value="Grüne" title="Geben Sie nur 3 bis 6 Buchstaben ein." class="parties" type="text" min="3" max="6" id="party4" required /> 
 							
-							<label>Partei 5</label>
-							<input title="Geben Sie nur 3 bis 6 Buchstaben ein." class="parties" type="text" min="3" max="6" id="party5" required /> 
-							</br></br>
+							<label class="form-label">Partei 5</label>
+							<input class="form-control form-control-sm" value="Linke" title="Geben Sie nur 3 bis 6 Buchstaben ein." class="parties" type="text" min="3" max="6" id="party5" required /> 
 							
-							<label>Partei 6</label>
-							<input title="Geben Sie nur 3 bis 6 Buchstaben ein." class="parties" type="text" min="3" max="6" id="party6" required /> 
-							</br></br>
+							<label class="form-label">Partei 6</label>
+							<input class="form-control form-control-sm" value="Partei" title="Geben Sie nur 3 bis 6 Buchstaben ein." class="parties" type="text" min="3" max="6" id="party6" required /> 
 							
-							<label>Partei 7</label>
-							<input title="Geben Sie nur 3 bis 6 Buchstaben ein." class="parties" type="text" min="3" max="6" id="party7" required /> 
+							<label class="form-label">Partei 7</label>
+							<input class="form-control form-control-sm" value="AFD" title="Geben Sie nur 3 bis 6 Buchstaben ein." class="parties" type="text" min="3" max="6" id="party7" required /> 
 						</form>
 					</div><!-- End of col 1 -->
 					<div class="col-lg-6">
 						<div id="content" class="teaser">
 							<h3>Willkommen zum Wahlstimmer Vergleicher</h3>
 							<p>
-								Dieses Projekt bietet Ihnen die Möglichkeit zu sehen, welche Auswirkungen Nicht-Wähler bei einer Wahl auf das Wahlergebnis haben. &mdash; Anhand des Vergleiches zwischen den Ausgaben <i>Ergebnisse mit Wahlberechtigten ohne Nicht-Wähler</i>  (100% Wahlbeteildigung) und <i>Ergebnis mit Wahlberechtigten mit Nicht-Wählern</i> können sie die Beeinflussung der Wahlergebnisse durch Nicht-Wähler sehen.
+								Dieses Projekt bietet Ihnen die Möglichkeit zu sehen, welche Auswirkungen Nicht-Wähler bei einer Wahl auf das Wahlergebnis haben. &mdash; Anhand des Vergleiches zwischen den Ausgaben <i>Ergebnisse mit Wahlberechtigten ohne Nicht-Wähler</i>  (100% Wahlbeteildigung) und <i>Ergebnis mit Wahlberechtigten mit Nicht-Wählern</i> können sie die Beeinflussung der Wahlergebnisse durch Nicht-Wähler sehen. Die Zahlenwerte werden immer zufällig generiert. Es geht beim Wahlergebnis lediglich darum den Unterschied zwischen Wählberechtigten und Nichtwählern aufzuzeigen.
 							</p>
 							
 							<h4>Anleitung</h4>
@@ -113,11 +97,8 @@
 						</div><!-- End of Teaser -->
 						<div id="content" class="result">
 							<h3>Basiswerte</h3>
-							<p>Wahlberechtigte: <span id="voters"></span></p>
-							<p>Ungültige Wählerstimmen: <span id="invalid-voters"></span></p>
-							<p>Nichtwähler: <span id="non-voters"></span>%.</p>
-							<p>Nichtwähleranzahl: <span id="non-voters-number"></span></p>
-							<p>Anteil der Nichtwähler: <span id="stakeNonVoters"></span></p>
+							<p>Wahlberechtigte: <span id="voters"></span> davon ungültige Wählerstimmen: <span id="invalid-voters"></span></p>
+							<p>Nichtwähler in <span id="non-voters"></span>% sind anteilig <span id="non-voters-number"></span> Stimmen</p>
 							
 							<h3>Ergebnis mit Wahlberechtigten exkl. Nicht-Wähler</h3>
 								<p>
@@ -206,11 +187,13 @@
 			</footer>
             
         </div><!-- End Wrapper -->
-        
-        
-        
-    </body>
-    
-</html>
+		
+		<!-- Javascript jQuery -->
+	    <script src="https://code.jquery.com/jquery-3.5.0.js"></script>
+	    <script src="./js/validation.min.js"></script>
+	    
+	    <!-- User JS -->
+	    <script src="js/myscript.js"></script>
+		
     </body>
 </html>

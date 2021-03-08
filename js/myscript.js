@@ -1,4 +1,3 @@
-//global vars
 var pLength = 7; //parties list length
 
 $(document).ready(function() {
@@ -11,39 +10,37 @@ $(document).ready(function() {
 
 function generateCampaign() {
 	//helpers
-	var diff = 0; //difference arraysum and voters
+	var diff = 0;
+	var invalidVoters = 0;
 	
 	//get values
-    var citizensTotal = $('#citizens-total').val(); //number long
-    var votingCitizens = $('#voting-citizens').val(); //number up to 100%
+    var citizensTotal = $('#citizens-total').val(); 
+    var votingCitizens = $('#voting-citizens').val(); 
 	var invalidVotes = $('#invalid-votes').val();
-    var parties = new Array(); //min 3 letters up to max 6
+    var parties = new Array();
 	
 	/*CALC*/
 	
-	//voters
 	$('#voters').html(citizensTotal);
-	
-	//non voting citizens in percent
-	var nonVoters = 100 - votingCitizens; // %
+	var nonVoters = 100 - votingCitizens; 
 	$('#non-voters').html(nonVoters);
 	
 	var nonVotersCitizens = Math.round(citizensTotal * nonVoters / 100);
 	$('#non-voters-number').html(nonVotersCitizens);
 	
-	//stake of non-voters (number)
+
 	var stakeNonVoters = citizensTotal * nonVoters / 100;
-	$('#stakeNonVoters').html(Math.round(stakeNonVoters)); //diese Stimmen nicht Anteil der Wahlstimmen
+	$('#stakeNonVoters').html(Math.round(stakeNonVoters)); 
 	
-	//invalid votes
+
 	if (invalidVotes > 0) {
-		var invalidVoters = (citizensTotal - stakeNonVoters) * invalidVotes / 100; //diese Stimmen sind Teil der Wahl aber nicht berücksichtigt für die Parteien
+		invalidVoters = (citizensTotal - stakeNonVoters) * invalidVotes / 100;
 		$('#invalid-voters').html(Math.round(invalidVoters));
 	} else {
 		$('#invalid-voters').html('0');
+		invalidVoters = 0;
 	}
 	
-	//calculate (7)
 	var actualVoters = citizensTotal - nonVotersCitizens;
 	var actualInvalidVotes = actualVoters - invalidVoters;
 	var actualResultWNV = new Array(); // %
@@ -51,12 +48,10 @@ function generateCampaign() {
 	var percentValue_a = new Array(); //%
 	var percentValue_b = new Array(); //%
 	
-	/*random number split for parties*/
-	var actualResultRandom = new Array(); //number
-	
+	var actualResultRandom = new Array(); 
 	actualResultRandom = splitNumberRandom((actualVoters - invalidVoters));
 	
-	//clean up values of random number spliting
+	//clean random numbers
 	var arResult = arrayIntSum(actualResultRandom);
 	if (arResult != (actualVoters - invalidVoters)) {
 		var sum = actualVoters - invalidVoters;
@@ -64,12 +59,10 @@ function generateCampaign() {
 		actualResultRandom[RandomInt(pLength -1)] += diff;
 	}
 	
-	//Werte aus dem Array in Prozentwerte umwandeln für ohne Non-Voters
 	for (i = 0; i < pLength; i++) {
 		percentValue_a[i] = Math.round(actualResultRandom[i] * 100 / actualVoters); 
 	}
 	
-	//Werte aus dem Array in Prozentwerten ausrechen mit den Non-Voters 
 	for (i = 0; i < pLength; i++) {
 		percentValue_b[i] = Math.round(actualResultRandom[i] * 100 / citizensTotal); 
 	}
@@ -96,12 +89,10 @@ function generateCampaign() {
 }
 
 function RandomInt(max) {
-	return Math.floor(Math.random() * Math.floor(max)) + 1;
+	return Math.floor(Math.random() * Math.floor(max) - 1);
 }
 
 function validateForm(){
-	//input length for values numbers and 
-	
 	//get values
     var citizensTotal = $('#citizens-total').val(); //number long
     var votingCitizens = $('#voting-citizens').val(); //number up to 100%

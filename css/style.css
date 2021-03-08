@@ -26,7 +26,11 @@ header h1 {
 /* Form */
 input, label {
 	font-family: 'Truculenta', sans-serif;
-	font-size: 1em;
+	font-size: 1em
+}
+
+input {
+	text-transform: uppercase;
 }
 
 /* Table */
@@ -70,4 +74,3 @@ footer p {
 	font-size: 0.7 em !important;
 	text-align: center;
 }
-
